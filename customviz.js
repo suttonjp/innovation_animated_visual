@@ -28,7 +28,7 @@ const visObject = {
   * data is passed to it.
   **/
   create: function(element, config){
-   element.innerHTML = '<div id="chartdiv" style="width: 100%;height:500px;></div>';
+   element.innerHTML = '<div id="chartdiv" style="width: 100%;height:500px;"></div>';
 
   },
 
