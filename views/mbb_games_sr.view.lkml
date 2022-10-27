@@ -729,6 +729,7 @@ view: mbb_games_sr {
   measure: three_point_shot_percentage {
     type: number
     sql: ${combined_three_point_attempts} / ${total_shot_attempts} ;;
+    value_format_name: percent_0
   }
 
   # ----- Sets of fields for drilling ------
