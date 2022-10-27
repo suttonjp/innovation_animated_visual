@@ -12,12 +12,12 @@ const visObject = {
   **/
   options: {
     first_option: {
-    	type: "string",
+      type: "string",
       label: "My First Option",
       default: "Default Value"
     },
     second_option: {
-    	type: "number",
+      type: "number",
       label: "My Second Option",
       default: 42
     }
@@ -27,16 +27,16 @@ const visObject = {
   * The create function gets called when the visualization is mounted but before any
   * data is passed to it.
   **/
-	create: function(element, config){
-	 element.innerHTML = '<div id="chartdiv"></div>';
+  create: function(element, config){
+   element.innerHTML = '<div id="chartdiv" style="width: 100%;height:500px;></div>';
 
-	},
+  },
 
  /**
   * UpdateAsync is the function that gets called (potentially) multiple times. It receives
   * the data and should update the visualization with the new data.
   **/
-	updateAsync: function(data, element, config, queryResponse, details, doneRendering){
+  updateAsync: function(data, element, config, queryResponse, details, doneRendering){
 
 
 var allData = {
@@ -725,8 +725,8 @@ series.events.on("inited", function () {
 
 
 
-		doneRendering()
-	}
+    doneRendering()
+  }
 };
 
 looker.plugins.visualizations.add(visObject);
