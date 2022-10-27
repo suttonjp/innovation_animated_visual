@@ -4,12 +4,6 @@ view: mbb_games_sr {
   # to be used for all fields in this view.
   sql_table_name: `bytecodeio-datablocks.ncaa_basketball.mbb_games_sr`
     ;;
-  # No primary key is defined for this view. In order to join this view in an Explore,
-  # define primary_key: yes on a dimension that has no repeated values.
-
-  # Here's what a typical dimension looks like in LookML.
-  # A dimension is a groupable field that can be used to filter query results.
-  # This dimension will be called "A Alias" in Explore.
 
   dimension: a_alias {
     type: string
@@ -20,10 +14,6 @@ view: mbb_games_sr {
     type: number
     sql: ${TABLE}.a_assists ;;
   }
-
-  # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
-  # measures for this dimension, but you can also add measures of many different aggregates.
-  # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
   measure: total_a_assists {
     type: sum
@@ -719,6 +709,26 @@ view: mbb_games_sr {
   measure: count {
     type: count
     drill_fields: [detail*]
+  }
+
+  measure: combined_two_point_attempts {
+    type: sum
+    sql: ${h_two_points_att} + ${a_two_points_att} ;;
+  }
+
+  measure: combined_three_point_attempts {
+    type: sum
+    sql: ${h_three_points_att} + ${a_three_points_att} ;;
+  }
+
+  measure: total_shot_attempts {
+    type: number
+    sql: ${combined_three_point_attempts} + ${combined_two_point_attempts} ;;
+  }
+
+  measure: three_point_shot_percentage {
+    type: number
+    sql: ${combined_three_point_attempts} / ${total_shot_attempts} ;;
   }
 
   # ----- Sets of fields for drilling ------
