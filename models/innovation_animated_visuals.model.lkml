@@ -4,3 +4,5 @@ connection: "hackathon-wine"
 include: "/views/**/*.view"
 
 explore: mbb_historical_teams_games {}
+
+explore: mbb_games_sr {}
