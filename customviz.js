@@ -632,7 +632,7 @@ var stepDuration = 4000;
 var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
 categoryAxis.renderer.grid.template.location = 0;
 categoryAxis.dataFields.category = grouping_dim;
-// categoryAxis.dataFields.category = "carriers.name;
+// categoryAxis.dataFields.category = "carriers.name";
 categoryAxis.renderer.minGridDistance = 1;
 categoryAxis.renderer.inversed = true;
 categoryAxis.renderer.grid.template.disabled = false;
@@ -689,7 +689,7 @@ function stop() {
 function nextstep() {
   iStep++;
 
-  if (iStep > iterator_list.length) {
+  if (iStep >= iterator_list.length) {
     iStep = 0;
   }
   var iterateStep = iterator_list[iStep];
