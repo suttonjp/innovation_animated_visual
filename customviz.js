@@ -38,9 +38,9 @@ const visObject = {
   **/
   updateAsync: function(data, element, config, queryResponse, details, doneRendering){
 
-    const iterator = qResponse.fields.dimensions[0].name;
-    const grouping_dim = qResponse.fields.dimensions[1].name;
-    const plot_measure = qResponse.fields.measures[0].name;
+    const iterator = queryResponse.fields.dimensions[0].name;
+    const grouping_dim = queryResponse.fields.dimensions[1].name;
+    const plot_measure = queryResponse.fields.measures[0].name;
 
     var allData = data.reduce((prev,val,key)=>{
       // debugger;
