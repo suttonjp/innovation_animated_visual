@@ -711,7 +711,7 @@ function nextstep() {
     itemsWithNonZero = 25;
   }
 
-  if (year == iterator_list.length) {
+  if (iStep == iterator_list.length) {
     series.interpolationDuration = stepDuration / 4;
     valueAxis.rangeChangeDuration = stepDuration / 4;
   } else {
