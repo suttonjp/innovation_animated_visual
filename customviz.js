@@ -668,7 +668,7 @@ series.columns.template.adapter.add("fill", function (fill, target) {
   return chart.colors.getIndex(target.dataItem.index);
 });
 var iStep = 0;
-var step = iterator_list[0];
+var step = iterator_list[iStep];
 label.text = step.toString();
 
 var interval;
