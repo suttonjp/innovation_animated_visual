@@ -41,15 +41,15 @@ const visObject = {
     const iterator = queryResponse.fields.dimensions[0].name;
     const grouping_dim = queryResponse.fields.dimensions[1].name;
     const plot_measure = queryResponse.fields.measures[0].name;
-
+    var iterator_list = [];
     var allData = data.reduce((prev,val,key)=>{
-      // debugger;
       if(!prev[val[iterator].value]){
-      prev[val[iterator].value] = []
-  }
-  prev[val[iterator].value].push(val.iterator)
-return prev
-},{});
+        prev[val[iterator].value] = []
+      }
+      prev[val[iterator].value].push(val.iterator)
+      iterator_list.push(val[iterator].value)
+      return prev
+      },{});
 // {
   // '2005': [
     //   {
@@ -667,17 +667,17 @@ chart.zoomOutButton.disabled = true;
 series.columns.template.adapter.add("fill", function (fill, target) {
   return chart.colors.getIndex(target.dataItem.index);
 });
-
-var year = 1999;
-label.text = year.toString();
+var iStep = 0;
+var step = iterator_list[0];
+label.text = step.toString();
 
 var interval;
 
 function play() {
   interval = setInterval(function () {
-    nextYear();
+    nextstep();
   }, stepDuration);
-  nextYear();
+  nextstep();
 }
 
 function stop() {
@@ -686,14 +686,14 @@ function stop() {
   }
 }
 
-function nextYear() {
-  year++;
+function nextstep() {
+  iStep++;
 
-  if (year > 2005) {
-    year = 1999;
+  if (iStep > iterator_list.length) {
+    iStep = 0;
   }
-
-  var newData = allData[year];
+  var iterateStep = iterator_list[iStep];
+  var newData = allData[iterateStep];
   var itemsWithNonZero = 0;
   for (var i = 0; i < chart.data.length; i++) {
     console.log(chart.data[i]);
@@ -711,7 +711,7 @@ function nextYear() {
     itemsWithNonZero = 25;
   }
 
-  if (year == 2005) {
+  if (year == iterator_list.length) {
     series.interpolationDuration = stepDuration / 4;
     valueAxis.rangeChangeDuration = stepDuration / 4;
   } else {
@@ -730,7 +730,7 @@ function nextYear() {
 
 categoryAxis.sortBySeries = series;
 
-chart.data = JSON.parse(JSON.stringify(allData[year]));
+chart.data = JSON.parse(JSON.stringify(allData[iterator_list[iStep]]));
 categoryAxis.zoom({ start: 0, end: 1 / chart.data.length });
 
 series.events.on("inited", function () {
