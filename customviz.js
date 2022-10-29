@@ -47,7 +47,7 @@ const visObject = {
         prev[val[iterator].value] = []
         iterator_list.push(val[iterator].value)
       }
-      prev[val[iterator].value].push({val[grouping_dim],val[plot_measure]})
+      prev[val[iterator].value].push(val[grouping_dim],val[plot_measure])
       return prev
       },{});
 // {
