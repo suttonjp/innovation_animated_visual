@@ -44,12 +44,12 @@ const visObject = {
     var iterator_list = [];
     var allData = data.reduce((prev,val,key)=>{
       if(!prev[val[iterator].value]){
-        prev[val[iterator].value] = []
-        iterator_list.push(val[iterator].value)
+        prev[val[iterator].value] = [];
+        iterator_list.push(val[iterator].value);
       }
       val.shift();
       prev[val[iterator].value].push(val);
-      return prev
+      return prev;
       },{});
 // {
   // '2005': [
