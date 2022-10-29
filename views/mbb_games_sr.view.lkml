@@ -57,7 +57,7 @@ view: mbb_games_sr {
 
   dimension: a_conf_name {
     type: string
-    sql: IFNULL(${TABLE}.a_conf_name,"Unknown") ;;
+    sql: ${TABLE}.a_conf_name ;;
   }
 
   dimension: a_defensive_rebounds {

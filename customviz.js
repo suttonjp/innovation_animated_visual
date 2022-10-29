@@ -720,7 +720,7 @@ function nextstep() {
   }
 
   chart.invalidateRawData();
-  label.text = year.toString();
+  label.text = step.toString();
 
   categoryAxis.zoom({
     start: 0,
