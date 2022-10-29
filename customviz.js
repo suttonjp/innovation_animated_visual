@@ -703,7 +703,7 @@ function nextstep() {
   for (var i = 0; i < chart.data.length; i++) {
     console.log(chart.data[i]);
     // chart.data[i]["flights.count"] = newData[i]["flights.count"];
-    chart.data[i][plot_measure] = newData[i][plot_measure];
+    chart.data[i][plot_measure] = newData[i][plot_measure].value;
     if (chart.data[i][plot_measure] > 0) {
       itemsWithNonZero++;
     }
