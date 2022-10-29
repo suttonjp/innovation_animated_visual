@@ -667,6 +667,7 @@ chart.zoomOutButton.disabled = true;
 series.columns.template.adapter.add("fill", function (fill, target) {
   return chart.colors.getIndex(target.dataItem.index);
 });
+debugger;
 var iStep = 0;
 var step = iterator_list[iStep];
 label.text = step.toString();
@@ -692,7 +693,7 @@ function nextstep() {
   if (iStep >= iterator_list.length) {
     iStep = 0;
   }
-  debugger;
+
   var iterateStep = iterator_list[iStep];
   var newData = allData[iterateStep];
   var itemsWithNonZero = 0;
