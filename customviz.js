@@ -44,11 +44,12 @@ const visObject = {
     var iterator_list = [];
     var allData = data.reduce((prev,val,key)=>{
       if(!prev[val[iterator].value]){
+        debugger;
         prev[val[iterator].value] = [];
         iterator_list.push(val[iterator].value);
       }
       val.shift();
-      prev[val[iterator].value].push(val);
+      prev[val[iterator].value].push(val[grouping_dim]);
       return prev;
       },{});
 // {
@@ -668,7 +669,7 @@ chart.zoomOutButton.disabled = true;
 series.columns.template.adapter.add("fill", function (fill, target) {
   return chart.colors.getIndex(target.dataItem.index);
 });
-debugger;
+// debugger;
 var iStep = 0;
 var step = iterator_list[iStep];
 label.text = step.toString();
