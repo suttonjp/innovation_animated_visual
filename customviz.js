@@ -47,6 +47,7 @@ const visObject = {
         prev[val[iterator].value] = []
         iterator_list.push(val[iterator].value)
       }
+      val.shift;
       prev[val[iterator].value].push(val)
       return prev
       },{});
