@@ -45,9 +45,9 @@ const visObject = {
     var allData = data.reduce((prev,val,key)=>{
       if(!prev[val[iterator].value]){
         prev[val[iterator].value] = []
+        iterator_list.push(val[iterator].value)
       }
       prev[val[iterator].value].push(val.iterator)
-      iterator_list.push(val[iterator].value)
       return prev
       },{});
 // {
