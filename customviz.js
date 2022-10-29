@@ -598,7 +598,7 @@ const visObject = {
 
   // }
 
-debugger;
+
 // Themes begin
 am4core.useTheme(am4themes_animated);
 // Themes end
@@ -692,6 +692,7 @@ function nextstep() {
   if (iStep >= iterator_list.length) {
     iStep = 0;
   }
+  debugger;
   var iterateStep = iterator_list[iStep];
   var newData = allData[iterateStep];
   var itemsWithNonZero = 0;
