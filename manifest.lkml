@@ -17,3 +17,15 @@ visualization: {
   ]
   file: "customviz.js"
 }
+
+
+visualization: {
+  id: "bar-chart-race"
+  label: "Bar Chart Race"
+  dependencies: [
+    "https://www.amcharts.com/lib/4/core.js",
+    "https://www.amcharts.com/lib/4/charts.js",
+    "https://www.amcharts.com/lib/4/themes/animated.js"
+  ]
+  file: "bar-chart.js"
+}
