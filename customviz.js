@@ -634,7 +634,7 @@ var stepDuration = 4000;
 
 var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
 categoryAxis.renderer.grid.template.location = 0;
-categoryAxis.dataFields.category = grouping_dim;
+categoryAxis.dataFields.category = grouping_dim.value;
 // categoryAxis.dataFields.category = "carriers.name";
 categoryAxis.renderer.minGridDistance = 1;
 categoryAxis.renderer.inversed = true;
@@ -647,10 +647,10 @@ valueAxis.rangeChangeDuration = stepDuration;
 valueAxis.extraMax = 0.1;
 
 var series = chart.series.push(new am4charts.ColumnSeries());
-series.dataFields.categoryY = grouping_dim;
+series.dataFields.categoryY = grouping_dim.value;
 // series.dataFields.categoryY = "carriers.name";
 // series.dataFields.valueX = "flights.count";
-series.dataFields.valueX = plot_measure;
+series.dataFields.valueX = plot_measure.value;
 series.tooltipText = "{valueX.value}";
 series.columns.template.strokeOpacity = 0;
 series.columns.template.column.cornerRadiusBottomRight = 5;
