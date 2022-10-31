@@ -199,11 +199,13 @@ function nextYear() {
 
   var newData = output2()[year];
 
-
+console.log(newData.length)
 
   var itemsWithNonZero = 0;
   for (var i = 0; i < chart.data.length; i++) {
-    console.log(newData[i], "here")
+
+      console.log(chart.data.length)
+
     chart.data[i]["count"] = newData[i]["count"];
 
     if (chart.data[i]["count"] > 0) {
