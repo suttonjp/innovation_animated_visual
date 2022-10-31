@@ -7,21 +7,11 @@ project_name: "innovation_animated_visuals"
 #   project: "name_of_other_project"
 # }
 
-visualization: {
-  id: "race"
-  label: "Bar Race"
-  dependencies: [
-    "https://www.amcharts.com/lib/4/core.js",
-    "https://www.amcharts.com/lib/4/charts.js",
-    "https://www.amcharts.com/lib/4/themes/animated.js"
-  ]
-  file: "customviz.js"
-}
 
 
 visualization: {
-  id: "bar-chart-race"
-  label: "Bar Chart Race"
+  id: "bar-chart-race-2"
+  label: "Bar Chart Race 2"
   dependencies: [
     "https://www.amcharts.com/lib/4/core.js",
     "https://www.amcharts.com/lib/4/charts.js",
