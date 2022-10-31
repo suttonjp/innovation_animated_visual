@@ -205,7 +205,7 @@ function nextYear() {
   for (var i = 0; i < chart.data.length; i++) {
 
     chart.data[i]["count"] = newData[i]["count"];
-    console.log(newData[i]["count"])
+    console.log(newData[i])
     if (chart.data[i]["count"] > 0) {
       itemsWithNonZero++;
     }
